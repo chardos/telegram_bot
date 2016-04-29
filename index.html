@@ -1,0 +1,48 @@
+<head>
+  <link rel="stylesheet" href="vendor/normalize.css">
+  <script type="text/javascript" src="vendor/jquery.js" ></script>
+</head>
+
+<script>
+var apiKey = 'REPLACE HERE';
+
+function translateText(text){
+  $.ajax({
+    type: "GET",
+    url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' + apiKey +
+    '&text=' + text +
+    '&lang=en-de' +
+    '&format=plain',
+    success: function(data) {
+      var text = data.text[0]
+      $('.Translate-output').html(text)
+    },
+    error: function(data, ajaxOptions, error){
+      console.log('error: ' + error);
+    }
+  })
+}
+
+$(document).ready(function(){
+  $(document).keyup(function (e) {
+    if ($(".Translate-input").is(":focus")
+    && (e.keyCode == 13)) {
+        translateText(e.target.value)
+      }
+    });
+})
+
+// $.ajax({
+//   type: "GET",
+//   url: 'https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=' + apiKey,
+//   success: function(data) {
+//     console.log(data);
+//   },
+// })
+
+</script>
+
+<body>
+  <input type="text" class="Translate-input">
+  <div class="Translate-output">Output here</div>
+</body>
