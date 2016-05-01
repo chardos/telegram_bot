@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chardos/telegram_bot#readme",
   "dependencies": {
+    "bluebird": "^3.3.5",
     "node-telegram-bot-api": "^0.21.1",
     "xml2js": "^0.4.16"
   }
