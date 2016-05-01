@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/chardos/telegram_bot#readme",
   "dependencies": {
-    "ajax-request": "^1.2.1",
-    "jQuery": "^1.7.4",
-    "jsdom": "^8.4.1",
-    "node-telegram-bot-api": "^0.21.1"
+    "node-telegram-bot-api": "^0.21.1",
+    "xml2js": "^0.4.16"
   }
 }
